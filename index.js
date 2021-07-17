@@ -1,5 +1,4 @@
-const app = Sammy('#root', function() {
-
+const app = Sammy('#app', function() {
     this.use('Handlebars', 'hbs');
     //Home routes
     this.get('/home', function() {
