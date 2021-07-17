@@ -1,13 +1,9 @@
 const userModel = firebase.auth();
 const app = Sammy('#app', function() {
-
     this.use('Handlebars', 'hbs');
     //Home routes
-    this.get('/home', function(context) {
-        extendContext(context)
-            .then(function() {
-                this.partial('../templates/homeGuest.hbs');
-            });
+    this.get('/home', function() {
+        this.partial('/templates/homeGuest.hbs');
     });
 
     //User routes
