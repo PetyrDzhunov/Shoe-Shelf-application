@@ -12,18 +12,9 @@
 <body>
     <main id="app"></main>
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyCM0MOn7uulpwkwkfRD80bDi6zPCwmK2IU",
-            authDomain: "shoeshelf-fedcc.firebaseapp.com",
-            projectId: "shoeshelf-fedcc",
-            storageBucket: "shoeshelf-fedcc.appspot.com",
-            messagingSenderId: "594838193403",
-            appId: "1:594838193403:web:2eb35fa725dad3f0cf1c5e"
-        };
-        firebase.initializeApp(firebaseConfig);
-    </script>
+    <script src="db-init.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
     <script src="node_modules/sammy/lib/sammy.js"></script>
