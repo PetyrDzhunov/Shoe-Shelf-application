@@ -1,0 +1,31 @@
+{
+    "name": "JS_App_Retake_Resourses",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "handlebars": "^4.7.7",
+        "jquery": "^3.6.0",
+        "lite-server": "^2.6.1",
+        "sammy": "^0.7.6"
+    },
+    "devDependencies": {},
+    "scripts": {
+
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "lite-server"
+
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/PetyrDzhunov/Shoe-Shelf-application.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/PetyrDzhunov/Shoe-Shelf-application/issues"
+    },
+    "homepage": "https://github.com/PetyrDzhunov/Shoe-Shelf-application#readme"
+}
+

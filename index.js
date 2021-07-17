@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 const userModel = firebase.auth();
@@ -21,6 +22,14 @@ const app = Sammy('#app', function() {
             })
 
         .catch(errorHandler);
+=======
+const userModel = firebase.auth();
+const app = Sammy('#app', function() {
+    this.use('Handlebars', 'hbs');
+    //Home routes
+    this.get('/home', function() {
+        this.partial('/templates/homeGuest.hbs');
+>>>>>>> b30844e317ff1ffe2bba1d5dce40dbba8b2d9d1a
     });
 
     //User routes
@@ -38,6 +47,7 @@ const app = Sammy('#app', function() {
             });
     });
 
+<<<<<<< HEAD
     this.get('/logout', function(context) {
         userModel.signOut()
             .then((response) => {
@@ -48,6 +58,8 @@ const app = Sammy('#app', function() {
 
     });
 
+=======
+>>>>>>> b30844e317ff1ffe2bba1d5dce40dbba8b2d9d1a
     this.post('/register', function(context) {
         const { email, password, rePassword } = context.params;
         if (password != rePassword) {
@@ -55,7 +67,11 @@ const app = Sammy('#app', function() {
         }
         userModel.createUserWithEmailAndPassword(email, password)
             .then((userData) => {
+<<<<<<< HEAD
                 this.redirect('/login');
+=======
+                this.redirect('/home');
+>>>>>>> b30844e317ff1ffe2bba1d5dce40dbba8b2d9d1a
             })
             .catch(errorHandler);
     });
@@ -77,6 +93,7 @@ const app = Sammy('#app', function() {
             });
     });
 
+<<<<<<< HEAD
     this.post('/create-offer', function(context) {
         const { productName, price, description, imageUrl, brand } = context.params;
         db.collection('offers').add({ productName, price, description, imageUrl, brand, salesman: getUserData().uid, clients: [] })
@@ -87,12 +104,16 @@ const app = Sammy('#app', function() {
     });
 
     this.get('/edit-offer/:id', function(context) {
+=======
+    this.get('/edit-offer', function(context) {
+>>>>>>> b30844e317ff1ffe2bba1d5dce40dbba8b2d9d1a
         extendContext(context)
             .then(function() {
                 this.partial('./templates/editOffer.hbs');
             });
     });
 
+<<<<<<< HEAD
     this.get('/details/:offerId', function(context) {
         const { offerId } = context.params;
         db.collection('offers').
@@ -108,6 +129,16 @@ const app = Sammy('#app', function() {
                     })
             })
     });
+=======
+    this.get('/details', function(context) {
+        extendContext(context)
+            .then(function() {
+                this.partial('./templates/details.hbs');
+            });
+    });
+
+
+>>>>>>> b30844e317ff1ffe2bba1d5dce40dbba8b2d9d1a
 });
 
 (() => {
@@ -128,8 +159,11 @@ function errorHandler(error) {
     console.log(error);
 };
 
+<<<<<<< HEAD
 //helper functions
 
+=======
+>>>>>>> b30844e317ff1ffe2bba1d5dce40dbba8b2d9d1a
 function saveUserData(data) {
     const { user: { email, uid } } = data;
     localStorage.setItem('user', JSON.stringify({ email, uid }))
@@ -138,9 +172,13 @@ function saveUserData(data) {
 function getUserData() {
     const user = localStorage.getItem('user');
     return user ? JSON.parse(user) : null;
+<<<<<<< HEAD
 };
 
 function clearUserData() {
     localStorage.removeItem('user');
 }
 >>>>>>> Stashed changes
+=======
+};
+>>>>>>> b30844e317ff1ffe2bba1d5dce40dbba8b2d9d1a
